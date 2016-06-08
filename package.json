@@ -1,0 +1,45 @@
+{
+  "name": "playbuzz-mission",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "trash dist/*",
+    "predev": "npm run clean",
+    "dev": "webpack --config webpack.config.dev.js -d --progress --watch",
+    "prebuild": "npm run clean",
+    "build": "webpack --config webpack.config.prod.js -p --progress --devtool source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alonronin/playbuzz-mission.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alonronin/playbuzz-mission/issues"
+  },
+  "homepage": "https://github.com/alonronin/playbuzz-mission#readme",
+  "devDependencies": {
+    "angular": "^1.5.6",
+    "angular-resource": "^1.5.6",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.6",
+    "css-loader": "^0.23.1",
+    "expose-loader": "^0.7.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.19.0",
+    "jquery": "^2.2.4",
+    "ng-annotate-loader": "^0.1.0",
+    "style-loader": "^0.13.1",
+    "trash-cli": "^1.3.0",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
