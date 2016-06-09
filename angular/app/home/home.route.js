@@ -3,7 +3,7 @@ module.exports = function($stateProvider){
 
   $stateProvider
     .state('main.home', {
-      url: '/',
+      url: '/?provider',
       controller: 'HomeCtrl as home',
       template: require('./home.html')
     })
