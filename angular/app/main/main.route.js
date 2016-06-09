@@ -1,4 +1,4 @@
-module.exports = function($stateProvider){
+module.exports = function ($stateProvider) {
   'ngInject';
 
   $stateProvider

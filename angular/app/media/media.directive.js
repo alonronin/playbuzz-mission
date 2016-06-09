@@ -14,7 +14,7 @@ module.exports = function () {
 
       var self = this;
 
-      var init = function() {
+      var init = function () {
         var provider = mediaService.provider(this.provider);
 
         this.url = '';
@@ -46,12 +46,12 @@ module.exports = function () {
             self.list.items = data;
           })
         });
-      }
+      };
 
       $scope.$watch(function () {
         return self.provider;
       }, function (p) {
-        if(p)
+        if (p)
           init.call(self);
       });
 

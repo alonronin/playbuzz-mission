@@ -9,11 +9,11 @@ module.exports = function ($injector) {
     providers[provider] = provider + 'Factory'
   };
 
-  this.provider = function(provider) {
+  this.provider = function (provider) {
     return $injector.get(providers[provider]);
   };
 
-  this.providers = function(){
+  this.providers = function () {
     return Object.keys(providers);
   }
 

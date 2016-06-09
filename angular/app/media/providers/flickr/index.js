@@ -7,7 +7,7 @@ module.exports = angular.module('playbuzz.media.flickr', [
   require('angular-resource')
 ])
 
-.factory('flickrFactory', function($sce, flickrAPI){
+.factory('flickrFactory', function ($sce, flickrAPI) {
   return {
     parse: function (url) {
       return url || false;

@@ -1,4 +1,4 @@
-module.exports = function($scope){
+module.exports = function ($scope) {
   'ngInject';
 
   this.title = 'Playbuzz - Media Provider';

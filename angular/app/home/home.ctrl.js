@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($scope, $log, $state, mediaService){
+module.exports = function ($scope, $log, $state, mediaService) {
   'ngInject';
 
   var self = this;
