@@ -1,5 +1,7 @@
 'use strict';
 
+require('bootstrap.css');
+
 var angular = require('angular');
 
 angular.module('playbuzz', [

@@ -8,7 +8,7 @@ module.exports = angular.module('playbuzz.main', [
 
 .config(require('./main.route'))
 .controller('MainCtrl', require('./main.ctrl'))
-  
+
 .name
 
 ;

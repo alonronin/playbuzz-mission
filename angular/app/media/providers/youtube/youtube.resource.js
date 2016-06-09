@@ -7,6 +7,8 @@ module.exports = function ($resource) {
   var resource = $resource('https://www.googleapis.com/youtube/v3/search', {key: key});
 
   this.search = function(q) {
-    return resource.get({q: q, part: 'snippet'}).$promise;
+    return resource.get({q: q, part: 'snippet'}).$promise.then(function(data){
+      return data.items;
+    });
   }
 };

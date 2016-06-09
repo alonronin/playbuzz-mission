@@ -4,7 +4,8 @@ var angular = require('angular');
 
 module.exports = angular.module('playbuzz.media', [
   require('angular-sanitize'),
-  require('./providers/youtube')
+  require('./providers/youtube'),
+  require('./providers/flickr')
 ])
 
 .service('mediaService', require('./media.service'))
@@ -12,6 +13,7 @@ module.exports = angular.module('playbuzz.media', [
 
 .run(function (mediaService) {
   mediaService.register('youtube');
+  mediaService.register('flickr');
 })
 
 .name

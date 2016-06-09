@@ -1,0 +1,7 @@
+ul.flickr li {
+  cursor: pointer;
+}
+
+ul.flickr li:hover {
+  background: #bdc3c7;
+}

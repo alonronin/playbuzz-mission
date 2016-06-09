@@ -1,5 +1,7 @@
 'use strict';
 
+require('./list.style.css');
+
 var angular = require('angular');
 
 module.exports = angular.module('playbuzz.media.youtube', [

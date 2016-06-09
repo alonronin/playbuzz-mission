@@ -1,0 +1,11 @@
+<ul class="media-list flickr">
+  <li class="media" ng-repeat="item in media.list.items track by $index" ng-click="media.url = 'https://farm'+ item.farm +'.staticflickr.com/'+ item.server +'/'+ item.id +'_'+ item.secret+'_h.jpg'">
+    <div class="media-left">
+      <img class="media-object img-thumbnail" ng-src="https://farm{{item.farm}}.staticflickr.com/{{item.server}}/{{item.id}}_{{item.secret}}_s.jpg">
+    </div>
+
+    <div class="media-body">
+      {{item.title}}
+    </div>
+  </li>
+</ul>

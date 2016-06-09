@@ -17,7 +17,6 @@ module.exports = function () {
 
       this.url = '';
       this.features = provider.features;
-      $log.debug(this.features);
 
       this.embed = {};
       this.list = {};
@@ -41,18 +40,13 @@ module.exports = function () {
       $scope.$watch(function () {
         return self.search;
       }, function (q) {
-        console.log(q);
-
         provider.search(q).then(function (data) {
-          self.list.items = data.items;
+          self.list.items = data;
         })
       });
 
     },
     controllerAs: 'media',
-    template: require('./media.element.html'),
-    link: function (scope, element, attrs) {
-
-    }
+    template: require('./media.element.html')
   }
 };

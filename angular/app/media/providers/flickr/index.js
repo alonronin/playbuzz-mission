@@ -1,19 +1,20 @@
 'use strict';
+require('./list.style.css')
 
 var angular = require('angular');
 
-module.exports = angular.module('playbuzz.media.instagram', [
+module.exports = angular.module('playbuzz.media.flickr', [
   require('angular-resource')
 ])
 
-.factory('instagramFactory', function($sce, youtubeAPI){
+.factory('flickrFactory', function($sce, flickrAPI){
   return {
     parse: function (url) {
       return url || false;
     },
 
     search: function (term) {
-      return instagramAPI.search(term);
+      return flickrAPI.search(term);
     },
 
     templates: {
@@ -28,7 +29,7 @@ module.exports = angular.module('playbuzz.media.instagram', [
   }
 })
 
-.service('instagramAPI', require('./instagram.resource'))
+.service('flickrAPI', require('./flickr.resource'))
 
 .name
 
