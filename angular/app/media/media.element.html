@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-5">
-    <div class="form-group">
+    <div class="form-group" ng-if="media.features.paste">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Paste URL" ng-model="media.url">
         <span class="input-group-addon">
@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-if="media.features.search">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" ng-model="media.search" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, blur: 0} }" >
         <span class="input-group-addon">
@@ -18,21 +18,11 @@
       </div>
     </div>
 
-    <ul class="media-list">
-      <li class="media" ng-repeat="item in media.items track by $index" ng-click="media.url = 'https://youtu.be/' + item.id.videoId">
-        <div class="media-left">
-          <img class="media-object img-thumbnail" ng-src="{{item.snippet.thumbnails.default.url}}">
-        </div>
-
-        <div class="media-body">
-          {{item.snippet.title}}
-        </div>
-      </li>
-    </ul>
+    <div ng-include="media.list.template" ></div>
 
   </div>
 
   <div class="col-md-7">
-    <div ng-include="media.template" ></div>
+    <div ng-include="media.embed.template" ></div>
   </div>
 </div>

@@ -15,26 +15,39 @@ module.exports = function () {
       var self = this;
       var provider = mediaService.provider(this.provider);
 
-      var template = './media-embed-' + this.provider;
-      $templateCache.put(template, provider.template);
-
       this.url = '';
-      this.template = template;
+      this.features = provider.features;
+      $log.debug(this.features);
+
+      this.embed = {};
+      this.list = {};
+
+      if (provider.templates.embed) {
+        this.embed.template = './media-embed-' + this.provider;
+        $templateCache.put(this.embed.template, provider.templates.embed);
+      }
+
+      if (provider.templates.list) {
+        this.list.template = './media-list-' + this.provider;
+        $templateCache.put(this.list.template, provider.templates.list);
+      }
 
       $scope.$watch(function () {
         return self.url;
       }, function (url) {
-        self.embed = provider.parse(url);
+        self.embed.url = provider.parse(url);
       });
 
       $scope.$watch(function () {
         return self.search;
       }, function (q) {
-        provider.search(q).then(function(data) {
-          self.items = data.items;
-          $log.debug(self.items);
+        console.log(q);
+
+        provider.search(q).then(function (data) {
+          self.list.items = data.items;
         })
-      })
+      });
+
     },
     controllerAs: 'media',
     template: require('./media.element.html'),

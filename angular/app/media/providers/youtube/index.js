@@ -6,7 +6,6 @@ module.exports = angular.module('playbuzz.media.youtube', [
   require('angular-resource')
 ])
 
-
 .factory('youtubeFactory', function($sce, youtubeAPI){
   return {
     parse: function (url) {
@@ -20,7 +19,15 @@ module.exports = angular.module('playbuzz.media.youtube', [
       return youtubeAPI.search(term);
     },
 
-    template: require('./embed.html')
+    templates: {
+      embed: require('./embed.html'),
+      list: require('./list.html')
+    },
+
+    features: {
+      paste: true,
+      search: true
+    }
   }
 })
 
