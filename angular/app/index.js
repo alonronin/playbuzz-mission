@@ -5,7 +5,8 @@ var angular = require('angular');
 angular.module('playbuzz', [
   require('angular-ui-router'),
   require('./main'),
-  require('./home')
+  require('./home'),
+  require('./media')
 ])
 
 .config(function($urlRouterProvider, $locationProvider){

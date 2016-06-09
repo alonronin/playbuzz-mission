@@ -1,6 +1,6 @@
 module.exports = function($scope){
   'ngInject';
 
-  this.title = 'Hello from main!';
+  this.title = 'Playbuzz - Media Provider';
 
 };

@@ -1,1 +1,13 @@
-<p>{{home.content}}</p>
+<div class="row">
+	<div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+      <li ng-repeat="provider in home.providers track by $index"><a href="#">{{provider}}</a></li>
+    </ul>
+
+	</div>
+
+  <div class="col-md-10">
+  	<playbuzz-media provider="home.provider"></playbuzz-media>
+
+  </div>
+</div>
