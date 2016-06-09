@@ -3,9 +3,17 @@ module.exports = function ($stateProvider) {
 
   $stateProvider
     .state('main.home', {
-      url: '/?provider',
+      url: '/',
       controller: 'HomeCtrl as home',
       template: require('./home.html')
     })
 
+    .state('main.home.provider', {
+      url: ':provider',
+      controller: function($state, $log){
+        this.provider = $state.params.provider;
+      },
+      controllerAs: 'vm',
+      template: '<playbuzz-media provider="vm.provider"></playbuzz-media>'
+    })
 };
