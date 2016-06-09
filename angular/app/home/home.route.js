@@ -10,7 +10,7 @@ module.exports = function ($stateProvider) {
 
     .state('main.home.provider', {
       url: ':provider',
-      controller: function($state, $log){
+      controller: function ($state, $log) {
         this.provider = $state.params.provider;
       },
       controllerAs: 'vm',

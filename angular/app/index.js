@@ -11,7 +11,7 @@ angular.module('playbuzz', [
   require('./media')
 ])
 
-.config(function($urlRouterProvider, $locationProvider){
+.config(function ($urlRouterProvider, $locationProvider) {
   'ngInject';
 
   $urlRouterProvider.rule(function ($i, $location) {
